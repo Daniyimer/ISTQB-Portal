@@ -42,10 +42,6 @@ export default async function HomePage({
       {/* 1. Hero Section */}
       <section className="relative z-10 container mx-auto px-4 sm:px-8 pt-20 pb-16 md:pt-32 md:pb-24 grid md:grid-cols-2 gap-12 items-center">
         <div className="flex flex-col items-start text-left">
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-primary/10 text-primary border border-primary/20 mb-6 animate-fade-in">
-            <Award className="h-3.5 w-3.5" />
-            {t('badge')}
-          </span>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-r from-foreground via-foreground/90 to-muted-foreground pb-2 leading-[1.1]">
             {t('title')}
           </h1>
