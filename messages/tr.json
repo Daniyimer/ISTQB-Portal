@@ -1,7 +1,7 @@
 {
   "HomePage": {
     "title": "ESTQB Etiyopya Sertifikasyon Platformu",
-    "description": "Yazılım testinde sertifika alın.",
+    "description": "The Ethiopian Software Testing Qualifications Board (ESTQB) is the official national board dedicated to advancing software quality. We provide internationally recognized certifications that validate your QA expertise, standardize industry practices, and connect Ethiopian talent to global opportunities.",
     "badge": "Resmi Sertifikasyon Kurumu",
     "explore": "Sertifikaları Keşfedin",
     "learnAbout": "Hakkımızda",
@@ -13,13 +13,13 @@
     "statExams": "Exams Conducted",
     "statExamsDesc": "Rigorous and objective standards",
     "whyChooseTitle": "Why Choose ESTQB Certification?",
-    "whyChooseSub": "Elevate your QA career with the gold standard in software testing.",
+    "whyChooseSub": "In a rapidly evolving tech landscape, standing out is essential. ESTQB certifications are the gold standard in software testing, offering unparalleled benefits for your professional growth.",
     "val1Title": "Global Career Mobility",
-    "val1Desc": "Gain certification recognized by top companies in over 130 countries worldwide.",
+    "val1Desc": "Achieving an ESTQB certification means your credentials are valid and respected by top-tier technology companies and employers in over 130 countries worldwide. It serves as an international passport for your QA career.",
     "val2Title": "Rigorous Standards",
-    "val2Desc": "Master structured testing techniques based on industry-leading global curricula.",
+    "val2Desc": "Master structured testing techniques, best practices, and agile methodologies based on industry-leading global curricula. Our syllabi ensure you speak the same technical language as testers anywhere in the world.",
     "val3Title": "Join QA Network",
-    "val3Desc": "Connect with a growing network of qualified QA professionals in Ethiopia.",
+    "val3Desc": "Connect with a rapidly growing network of qualified QA professionals in Ethiopia. Gain access to exclusive industry events, continuous learning resources, and career advancement opportunities.",
     "certTitle": "Active Certifications",
     "certSub": "Start your journey today with our globally recognized testing syllabi.",
     "journeyTitle": "Your Certification Journey",
@@ -36,7 +36,11 @@
     "newsSub": "Stay up to date with QA announcements, tips, and industry trends.",
     "ctaTitle": "Ready to Elevate Your QA Career?",
     "ctaDesc": "Join thousands of certified software testing professionals and unlock new job opportunities globally.",
-    "ctaBtn": "Create Account Now"
+    "ctaBtn": "Create Account Now",
+    "whoWeAreTitle": "Who We Are",
+    "whoWeAreSub": "Elevating the standards of software engineering across Ethiopia.",
+    "whoWeAreDesc1": "As a member of the International Software Testing Qualifications Board (ISTQB), we are responsible for ensuring that software testing professionals in Ethiopia have access to the highest quality, standardized, and globally recognized certification schemes. Our mission is to promote the value of software testing as a critical profession.",
+    "whoWeAreDesc2": "Whether you are a university student just starting your QA journey, or a seasoned professional looking to validate your expertise, ESTQB provides the resources, syllabi, and examinations necessary to achieve your career goals."
   },
   "Navigation": {
     "certifications": "Sertifikalar",

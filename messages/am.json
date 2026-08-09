@@ -1,7 +1,7 @@
 {
   "HomePage": {
     "title": "የ ESTQB ኢትዮጵያ ማረጋገጫ መድረክ",
-    "description": "በሶፍትዌር ፍተሻ ውስጥ የምስክር ወረቀት ያግኙ።",
+    "description": "The Ethiopian Software Testing Qualifications Board (ESTQB) is the official national board dedicated to advancing software quality. We provide internationally recognized certifications that validate your QA expertise, standardize industry practices, and connect Ethiopian talent to global opportunities. (በአማርኛ)",
     "badge": "ይፋዊ የማረጋገጫ አካል",
     "explore": "ማረጋገጫዎችን ያስሱ",
     "learnAbout": "ስለ እኛ ይወቁ",
@@ -13,13 +13,13 @@
     "statExams": "የተከናወኑ ፈተናዎች",
     "statExamsDesc": "ጥብቅ እና ዓላማ ያላቸው ደረጃዎች",
     "whyChooseTitle": "ለምን የESTQB ማረጋገጫ ይመርጣሉ?",
-    "whyChooseSub": "በሶፍትዌር መፈተሽ ውስጥ ባለው ወርቃማ ደረጃ የQA ስራዎን ያሳድጉ።",
+    "whyChooseSub": "In a rapidly evolving tech landscape, standing out is essential. ESTQB certifications are the gold standard in software testing, offering unparalleled benefits for your professional growth. (በአማርኛ)",
     "val1Title": "ዓለም አቀፍ የሥራ እንቅስቃሴ",
-    "val1Desc": "በዓለም ዙሪያ ከ130 በላይ በሆኑ አገሮች ውስጥ በዋና ዋና ኩባንያዎች ዘንድ እውቅና ያግኙ።",
+    "val1Desc": "Achieving an ESTQB certification means your credentials are valid and respected by top-tier technology companies and employers in over 130 countries worldwide. It serves as an international passport for your QA career. (በአማርኛ)",
     "val2Title": "ጥብቅ ደረጃዎች",
-    "val2Desc": "በዓለም መሪ ሥርዓተ ትምህርቶች ላይ የተመሰረቱ የተዋቀሩ የሙከራ ዘዴዎችን ይቆጣጠሩ።",
+    "val2Desc": "Master structured testing techniques, best practices, and agile methodologies based on industry-leading global curricula. Our syllabi ensure you speak the same technical language as testers anywhere in the world. (በአማርኛ)",
     "val3Title": "የQA መረብን ይቀላቀሉ",
-    "val3Desc": "በኢትዮጵያ ውስጥ ካሉ ብቁ የQA ባለሙያዎች ጋር ይገናኙ።",
+    "val3Desc": "Connect with a rapidly growing network of qualified QA professionals in Ethiopia. Gain access to exclusive industry events, continuous learning resources, and career advancement opportunities. (በአማርኛ)",
     "certTitle": "ንቁ የምስክር ወረቀቶች",
     "certSub": "በዓለም አቀፍ ደረጃ ተቀባይነት ባላቸው የሙከራ ትምህርቶቻችን ዛሬ ጉዞዎን ይጀምሩ።",
     "journeyTitle": "የምስክር ወረቀት ጉዞዎ",
@@ -36,7 +36,11 @@
     "newsSub": "በQA ማስታወቂያዎች፣ ጠቃሚ ምክሮች እና የኢንዱስትሪ አዝማሚያዎች ወቅታዊ መረጃ ያግኙ።",
     "ctaTitle": "የQA ስራዎን ለማሳደግ ዝግጁ ነዎት?",
     "ctaDesc": "በሺዎች የሚቆጠሩ የተረጋገጡ የሶፍትዌር መፈተሻ ባለሙያዎችን ይቀላቀሉ እና በዓለም አቀፍ ደረጃ አዳዲስ የስራ እድሎችን ያግኙ።",
-    "ctaBtn": "አሁን መለያ ይፍጠሩ"
+    "ctaBtn": "አሁን መለያ ይፍጠሩ",
+    "whoWeAreTitle": "Who We Are (በአማርኛ)",
+    "whoWeAreSub": "Elevating the standards of software engineering across Ethiopia. (በአማርኛ)",
+    "whoWeAreDesc1": "As a member of the International Software Testing Qualifications Board (ISTQB), we are responsible for ensuring that software testing professionals in Ethiopia have access to the highest quality, standardized, and globally recognized certification schemes. Our mission is to promote the value of software testing as a critical profession. (በአማርኛ)",
+    "whoWeAreDesc2": "Whether you are a university student just starting your QA journey, or a seasoned professional looking to validate your expertise, ESTQB provides the resources, syllabi, and examinations necessary to achieve your career goals. (በአማርኛ)"
   },
   "Navigation": {
     "certifications": "ማረጋገጫዎች",

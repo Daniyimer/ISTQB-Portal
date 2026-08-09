@@ -1,7 +1,7 @@
 {
   "HomePage": {
     "title": "منصة شهادات ESTQB إثيوبيا",
-    "description": "احصل على شهادة في اختبار البرمجيات.",
+    "description": "The Ethiopian Software Testing Qualifications Board (ESTQB) is the official national board dedicated to advancing software quality. We provide internationally recognized certifications that validate your QA expertise, standardize industry practices, and connect Ethiopian talent to global opportunities.",
     "badge": "هيئة إصدار الشهادات الرسمية",
     "explore": "استكشف الشهادات",
     "learnAbout": "تعرف علينا",
@@ -13,13 +13,13 @@
     "statExams": "الامتحانات التي تم إجراؤها",
     "statExamsDesc": "معايير صارمة وموضوعية",
     "whyChooseTitle": "لماذا تختار شهادة ESTQB؟",
-    "whyChooseSub": "ارتقِ بمسيرتك المهنية في مجال ضمان الجودة من خلال المعيار الذهبي في اختبار البرمجيات.",
+    "whyChooseSub": "In a rapidly evolving tech landscape, standing out is essential. ESTQB certifications are the gold standard in software testing, offering unparalleled benefits for your professional growth.",
     "val1Title": "الحركة المهنية العالمية",
-    "val1Desc": "احصل على شهادة معترف بها من قبل كبرى الشركات في أكثر من 130 دولة حول العالم.",
+    "val1Desc": "Achieving an ESTQB certification means your credentials are valid and respected by top-tier technology companies and employers in over 130 countries worldwide. It serves as an international passport for your QA career.",
     "val2Title": "معايير صارمة",
-    "val2Desc": "إتقان تقنيات الاختبار المنظمة القائمة على المناهج العالمية الرائدة في الصناعة.",
+    "val2Desc": "Master structured testing techniques, best practices, and agile methodologies based on industry-leading global curricula. Our syllabi ensure you speak the same technical language as testers anywhere in the world.",
     "val3Title": "انضم إلى شبكة ضمان الجودة",
-    "val3Desc": "تواصل مع شبكة متنامية من محترفي ضمان الجودة المؤهلين في إثيوبيا.",
+    "val3Desc": "Connect with a rapidly growing network of qualified QA professionals in Ethiopia. Gain access to exclusive industry events, continuous learning resources, and career advancement opportunities.",
     "certTitle": "الشهادات الفعالة",
     "certSub": "ابدأ رحلتك اليوم مع مناهج الاختبار المعترف بها عالمياً.",
     "journeyTitle": "رحلة الشهادة الخاصة بك",
@@ -36,7 +36,11 @@
     "newsSub": "ابق على اطلاع بإعلانات ضمان الجودة والنصائح واتجاهات الصناعة.",
     "ctaTitle": "جاهز للارتقاء بمسيرتك المهنية؟",
     "ctaDesc": "انضم إلى الآلاف من متخصصي اختبار البرمجيات المعتمدين وافتح فرص عمل جديدة عالمياً.",
-    "ctaBtn": "أنشئ حساباً الآن"
+    "ctaBtn": "أنشئ حساباً الآن",
+    "whoWeAreTitle": "Who We Are",
+    "whoWeAreSub": "Elevating the standards of software engineering across Ethiopia.",
+    "whoWeAreDesc1": "As a member of the International Software Testing Qualifications Board (ISTQB), we are responsible for ensuring that software testing professionals in Ethiopia have access to the highest quality, standardized, and globally recognized certification schemes. Our mission is to promote the value of software testing as a critical profession.",
+    "whoWeAreDesc2": "Whether you are a university student just starting your QA journey, or a seasoned professional looking to validate your expertise, ESTQB provides the resources, syllabi, and examinations necessary to achieve your career goals."
   },
   "Navigation": {
     "certifications": "الشهادات",

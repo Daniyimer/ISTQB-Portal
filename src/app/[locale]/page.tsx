@@ -40,25 +40,58 @@ export default async function HomePage({
   return (
     <div className="flex flex-col flex-1 w-full bg-background relative overflow-hidden">
       {/* 1. Hero Section */}
-      <section className="relative z-10 container mx-auto px-4 sm:px-8 pt-20 pb-16 md:pt-32 md:pb-24 flex flex-col items-center text-center">
-        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-primary/10 text-primary border border-primary/20 mb-6 animate-fade-in">
-          <Award className="h-3.5 w-3.5" />
-          {t('badge')}
-        </span>
-        <h1 className="max-w-4xl text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-r from-foreground via-foreground/90 to-muted-foreground pb-2 leading-[1.1]">
-          {t('title')}
-        </h1>
-        <p className="max-w-2xl text-lg md:text-xl text-muted-foreground mb-10 leading-relaxed">
-          {t('description')}
-        </p>
-        <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-          <Link href="/certifications" className={buttonVariants({ size: 'lg', className: 'w-full sm:w-auto shadow-lg shadow-primary/20 gap-2 font-semibold' })}>
-            {t('explore')}
-            <ArrowRight className="h-4 w-4" />
-          </Link>
-          <Link href="/about" className={buttonVariants({ variant: 'outline', size: 'lg', className: 'w-full sm:w-auto backdrop-blur-sm bg-background/50 font-semibold' })}>
-            {t('learnAbout')}
-          </Link>
+      <section className="relative z-10 container mx-auto px-4 sm:px-8 pt-20 pb-16 md:pt-32 md:pb-24 grid md:grid-cols-2 gap-12 items-center">
+        <div className="flex flex-col items-start text-left">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-primary/10 text-primary border border-primary/20 mb-6 animate-fade-in">
+            <Award className="h-3.5 w-3.5" />
+            {t('badge')}
+          </span>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-r from-foreground via-foreground/90 to-muted-foreground pb-2 leading-[1.1]">
+            {t('title')}
+          </h1>
+          <p className="text-lg text-muted-foreground mb-10 leading-relaxed max-w-lg">
+            {t('description')}
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+            <Link href="/certifications" className={buttonVariants({ size: 'lg', className: 'w-full sm:w-auto shadow-lg shadow-primary/20 gap-2 font-semibold' })}>
+              {t('explore')}
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+            <Link href="/about" className={buttonVariants({ variant: 'outline', size: 'lg', className: 'w-full sm:w-auto backdrop-blur-sm bg-background/50 font-semibold' })}>
+              {t('learnAbout')}
+            </Link>
+          </div>
+        </div>
+        <div className="relative hidden md:block">
+          {/* Floating Certificate Graphic */}
+          <div className="relative w-full max-w-md mx-auto aspect-[4/3] bg-card border border-border/40 rounded-2xl p-6 shadow-2xl rotate-3 hover:rotate-0 transition-transform duration-500">
+             <div className="flex justify-between items-start mb-8">
+               <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary"><Award className="h-6 w-6" /></div>
+               <div className="w-24 h-6 rounded bg-muted/50"></div>
+             </div>
+             <div className="space-y-4 mb-8">
+               <div className="w-3/4 h-4 rounded bg-muted/50"></div>
+               <div className="w-1/2 h-4 rounded bg-muted/50"></div>
+             </div>
+             <div className="pt-6 border-t border-border/40 flex justify-between">
+               <div className="w-16 h-16 rounded-full border-4 border-primary/20 flex items-center justify-center opacity-50"><CheckCircle2 className="h-8 w-8 text-primary" /></div>
+               <div className="w-32 h-12 rounded bg-muted/30"></div>
+             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 1.5 Who We Are Section */}
+      <section className="relative z-10 container mx-auto px-4 sm:px-8 py-16 md:py-24 bg-muted/20 border-y border-border/40">
+        <div className="max-w-5xl mx-auto space-y-8">
+          <div className="text-center">
+            <h2 className="text-3xl font-bold mb-4">{t('whoWeAreTitle')}</h2>
+            <p className="text-xl font-medium text-foreground/80">{t('whoWeAreSub')}</p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8 text-left bg-card border border-border/40 rounded-3xl p-8 md:p-12 shadow-sm">
+            <p className="text-muted-foreground leading-relaxed">{t('whoWeAreDesc1')}</p>
+            <p className="text-muted-foreground leading-relaxed">{t('whoWeAreDesc2')}</p>
+          </div>
         </div>
       </section>
 
@@ -87,33 +120,37 @@ export default async function HomePage({
         </div>
       </section>
 
-      {/* 3. Why Choose Section */}
+      {/* 3. Why Choose Section (Bento Box) */}
       <section className="relative z-10 container mx-auto px-4 sm:px-8 py-20 md:py-28">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">{t('whyChooseTitle')}</h2>
           <p className="text-muted-foreground leading-relaxed">{t('whyChooseSub')}</p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="bg-card border border-border/40 rounded-2xl p-8 hover:shadow-md transition-all duration-300 group hover:-translate-y-1">
-            <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
-              <Globe className="h-6 w-6" />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          {/* Main featured card */}
+          <div className="bg-card border border-border/40 rounded-3xl p-8 hover:shadow-md transition-all duration-300 group flex flex-col justify-center">
+            <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mb-8 group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
+              <Globe className="h-8 w-8" />
             </div>
-            <h3 className="text-xl font-bold mb-3">{t('val1Title')}</h3>
-            <p className="text-sm text-muted-foreground leading-relaxed">{t('val1Desc')}</p>
+            <h3 className="text-2xl font-bold mb-4">{t('val1Title')}</h3>
+            <p className="text-muted-foreground leading-relaxed">{t('val1Desc')}</p>
           </div>
-          <div className="bg-card border border-border/40 rounded-2xl p-8 hover:shadow-md transition-all duration-300 group hover:-translate-y-1">
-            <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
-              <Award className="h-6 w-6" />
+          {/* Stacked right cards */}
+          <div className="flex flex-col gap-8">
+            <div className="bg-card border border-border/40 rounded-3xl p-8 hover:shadow-md transition-all duration-300 group flex-1">
+              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
+                <Award className="h-6 w-6" />
+              </div>
+              <h3 className="text-xl font-bold mb-3">{t('val2Title')}</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">{t('val2Desc')}</p>
             </div>
-            <h3 className="text-xl font-bold mb-3">{t('val2Title')}</h3>
-            <p className="text-sm text-muted-foreground leading-relaxed">{t('val2Desc')}</p>
-          </div>
-          <div className="bg-card border border-border/40 rounded-2xl p-8 hover:shadow-md transition-all duration-300 group hover:-translate-y-1">
-            <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
-              <Users className="h-6 w-6" />
+            <div className="bg-card border border-border/40 rounded-3xl p-8 hover:shadow-md transition-all duration-300 group flex-1">
+              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
+                <Users className="h-6 w-6" />
+              </div>
+              <h3 className="text-xl font-bold mb-3">{t('val3Title')}</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">{t('val3Desc')}</p>
             </div>
-            <h3 className="text-xl font-bold mb-3">{t('val3Title')}</h3>
-            <p className="text-sm text-muted-foreground leading-relaxed">{t('val3Desc')}</p>
           </div>
         </div>
       </section>
