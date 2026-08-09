@@ -78,13 +78,13 @@ export default async function HomePage({
       </section>
 
       {/* 1.5 Who We Are Section */}
-      <section className="relative z-10 container mx-auto px-4 sm:px-8 py-16 md:py-24 bg-card/10 backdrop-blur-2xl border border-foreground/15 rounded-3xl shadow-sm mb-16">
+      <section className="relative z-10 container mx-auto px-4 sm:px-8 py-16 md:py-24 bg-card/60 backdrop-blur-2xl border border-foreground/15 rounded-3xl shadow-sm mb-16">
         <div className="max-w-5xl mx-auto space-y-8">
           <div className="text-center">
             <h2 className="text-3xl font-bold mb-4">{t('whoWeAreTitle')}</h2>
             <p className="text-xl font-medium text-foreground/80">{t('whoWeAreSub')}</p>
           </div>
-          <div className="grid md:grid-cols-2 gap-8 text-left bg-card/60 backdrop-blur-2xl border border-foreground/15 rounded-3xl p-8 md:p-12 shadow-lg">
+          <div className="grid md:grid-cols-2 gap-8 text-left bg-card/10 backdrop-blur-2xl border border-foreground/15 rounded-3xl p-8 md:p-12 shadow-lg">
             <p className="text-muted-foreground leading-relaxed">{t('whoWeAreDesc1')}</p>
             <p className="text-muted-foreground leading-relaxed">{t('whoWeAreDesc2')}</p>
           </div>
@@ -92,7 +92,7 @@ export default async function HomePage({
       </section>
 
       {/* 2. Stats Section */}
-      <section className="relative z-10 container mx-auto px-4 sm:px-8 py-12 bg-card/10 backdrop-blur-2xl border border-foreground/15 rounded-3xl shadow-sm mb-16">
+      <section className="relative z-10 container mx-auto px-4 sm:px-8 py-12 bg-card/30 backdrop-blur-2xl border border-foreground/15 rounded-3xl shadow-sm mb-16">
         <h2 className="sr-only">{t('statsTitle')}</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
           <div className="space-y-2">
@@ -152,7 +152,7 @@ export default async function HomePage({
       </section>
 
       {/* 4. Active Certifications */}
-      <section className="relative z-10 container mx-auto px-4 sm:px-8 py-16 bg-card/10 backdrop-blur-2xl border border-foreground/15 rounded-3xl shadow-sm mb-16">
+      <section className="relative z-10 container mx-auto px-4 sm:px-8 py-16 bg-card/30 backdrop-blur-2xl border border-foreground/15 rounded-3xl shadow-sm mb-16">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-4">
           <div>
             <h2 className="text-3xl font-bold mb-3">{t('certTitle')}</h2>
@@ -167,7 +167,7 @@ export default async function HomePage({
           {certifications.map(cert => {
             const trans = cert.translations.find(tr => tr.locale === locale) || cert.translations.find(tr => tr.locale === 'en') || cert;
             return (
-              <div key={cert.id} className="bg-card/30 backdrop-blur-2xl border border-foreground/15 rounded-2xl p-6 shadow-lg flex flex-col justify-between hover:shadow-xl hover:border-foreground/25 hover:-translate-y-1 transition-all">
+              <div key={cert.id} className="bg-card/10 backdrop-blur-2xl border border-foreground/15 rounded-2xl p-6 shadow-lg flex flex-col justify-between hover:shadow-xl hover:border-foreground/25 hover:-translate-y-1 transition-all">
                 <div>
                   <span className="text-[10px] uppercase font-bold tracking-wider text-primary bg-primary/10 px-2 py-0.5 rounded">
                     {cert.level}
@@ -223,7 +223,7 @@ export default async function HomePage({
 
       {/* 6. Blog Posts Preview */}
       {blogPosts.length > 0 && (
-        <section className="relative z-10 container mx-auto px-4 sm:px-8 py-16 bg-card/10 backdrop-blur-2xl border border-foreground/15 rounded-3xl shadow-sm mb-16">
+        <section className="relative z-10 container mx-auto px-4 sm:px-8 py-16 bg-card/30 backdrop-blur-2xl border border-foreground/15 rounded-3xl shadow-sm mb-16">
           <div className="flex justify-between items-end mb-12">
             <div>
               <h2 className="text-3xl font-bold mb-3">{t('newsTitle')}</h2>
@@ -238,7 +238,7 @@ export default async function HomePage({
             {blogPosts.map(post => {
               const trans = post.translations.find(tr => tr.locale === locale) || post.translations.find(tr => tr.locale === 'en') || post;
               return (
-                <div key={post.id} className="bg-card/30 backdrop-blur-2xl border border-foreground/15 rounded-2xl overflow-hidden shadow-lg flex flex-col justify-between hover:shadow-xl hover:border-foreground/25 hover:-translate-y-1 transition-all group">
+                <div key={post.id} className="bg-card/10 backdrop-blur-2xl border border-foreground/15 rounded-2xl overflow-hidden shadow-lg flex flex-col justify-between hover:shadow-xl hover:border-foreground/25 hover:-translate-y-1 transition-all group">
                   <div className="p-6">
                     <span className="text-[10px] uppercase font-bold tracking-wider text-muted-foreground block mb-3">
                       {post.category}
