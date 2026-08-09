@@ -8,8 +8,7 @@ export function Header() {
   const t = useTranslations('Navigation');
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="h-1 w-full bg-gradient-to-r from-[#009A44] via-[#FED100] to-[#EF3340]"></div>
+    <header className="sticky top-0 z-50 w-full border-b border-border bg-background">
       <div className="container mx-auto flex h-16 items-center justify-between px-4 sm:px-8">
         <Link href="/" className="flex items-center space-x-2">
           <span className="font-bold sm:inline-block text-xl">
