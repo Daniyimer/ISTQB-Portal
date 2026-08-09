@@ -9,7 +9,7 @@ export function LayoutWrapper({ children }: { children: React.ReactNode }) {
   const isAdminArea = pathname.includes('/admin') || pathname.includes('/superadmin') || pathname.includes('/student');
 
   return (
-    <div className="flex min-h-screen flex-col bg-background relative overflow-hidden">
+    <div className="flex min-h-screen flex-col bg-background relative">
       {!isAdminArea && (
         <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
           <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] rounded-full bg-[#009A44] opacity-20 dark:opacity-10 blur-[120px] mix-blend-multiply dark:mix-blend-screen animate-pulse"></div>
