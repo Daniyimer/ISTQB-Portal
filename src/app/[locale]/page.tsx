@@ -88,7 +88,7 @@ export default async function HomePage({
             <h2 className="text-3xl font-bold mb-4">{t('whoWeAreTitle')}</h2>
             <p className="text-xl font-medium text-foreground/80">{t('whoWeAreSub')}</p>
           </div>
-          <div className="grid md:grid-cols-2 gap-8 text-left bg-card/45 backdrop-blur-2xl border border-foreground/15 rounded-3xl p-8 md:p-12 shadow-lg">
+          <div className="grid md:grid-cols-2 gap-8 text-left bg-card/70 backdrop-blur-2xl border border-foreground/15 rounded-3xl p-8 md:p-12 shadow-lg">
             <p className="text-muted-foreground leading-relaxed">{t('whoWeAreDesc1')}</p>
             <p className="text-muted-foreground leading-relaxed">{t('whoWeAreDesc2')}</p>
           </div>
