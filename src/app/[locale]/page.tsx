@@ -78,7 +78,7 @@ export default async function HomePage({
       </section>
 
       {/* 1.5 Who We Are Section */}
-      <section className="relative z-10 container mx-auto px-4 sm:px-8 py-16 md:py-24">
+      <section className="relative z-10 container mx-auto px-4 sm:px-8 py-16 md:py-24 bg-card/10 backdrop-blur-2xl border border-foreground/15 rounded-3xl shadow-sm mb-16">
         <div className="max-w-5xl mx-auto space-y-8">
           <div className="text-center">
             <h2 className="text-3xl font-bold mb-4">{t('whoWeAreTitle')}</h2>
@@ -92,7 +92,7 @@ export default async function HomePage({
       </section>
 
       {/* 2. Stats Section */}
-      <section className="relative z-10 container mx-auto px-4 sm:px-8 py-12">
+      <section className="relative z-10 container mx-auto px-4 sm:px-8 py-12 bg-card/10 backdrop-blur-2xl border border-foreground/15 rounded-3xl shadow-sm mb-16">
         <h2 className="sr-only">{t('statsTitle')}</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
           <div className="space-y-2">
@@ -152,7 +152,7 @@ export default async function HomePage({
       </section>
 
       {/* 4. Active Certifications */}
-      <section className="relative z-10 container mx-auto px-4 sm:px-8 py-16">
+      <section className="relative z-10 container mx-auto px-4 sm:px-8 py-16 bg-card/10 backdrop-blur-2xl border border-foreground/15 rounded-3xl shadow-sm mb-16">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-4">
           <div>
             <h2 className="text-3xl font-bold mb-3">{t('certTitle')}</h2>
@@ -223,7 +223,7 @@ export default async function HomePage({
 
       {/* 6. Blog Posts Preview */}
       {blogPosts.length > 0 && (
-        <section className="relative z-10 container mx-auto px-4 sm:px-8 py-16">
+        <section className="relative z-10 container mx-auto px-4 sm:px-8 py-16 bg-card/10 backdrop-blur-2xl border border-foreground/15 rounded-3xl shadow-sm mb-16">
           <div className="flex justify-between items-end mb-12">
             <div>
               <h2 className="text-3xl font-bold mb-3">{t('newsTitle')}</h2>
