@@ -63,8 +63,8 @@ export default async function HomePage({
           </div>
         </div>
         <div className="relative hidden md:block">
-          {/* Floating Certificate Graphic */}
-          <div className="relative w-full max-w-md mx-auto aspect-[4/3] bg-card border border-border/40 rounded-2xl p-6 shadow-2xl rotate-3 hover:rotate-0 transition-transform duration-500">
+          {/* Floating Certificate Graphic (Glassmorphism) */}
+          <div className="relative w-full max-w-md mx-auto aspect-[4/3] bg-card/20 backdrop-blur-2xl border border-foreground/15 rounded-2xl p-6 shadow-2xl rotate-3 hover:rotate-0 transition-transform duration-500">
              <div className="flex justify-between items-start mb-8">
                <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary"><Award className="h-6 w-6" /></div>
                <div className="w-24 h-6 rounded bg-muted/50"></div>
@@ -88,7 +88,7 @@ export default async function HomePage({
             <h2 className="text-3xl font-bold mb-4">{t('whoWeAreTitle')}</h2>
             <p className="text-xl font-medium text-foreground/80">{t('whoWeAreSub')}</p>
           </div>
-          <div className="grid md:grid-cols-2 gap-8 text-left bg-card border border-border/40 rounded-3xl p-8 md:p-12 shadow-sm">
+          <div className="grid md:grid-cols-2 gap-8 text-left bg-card/20 backdrop-blur-2xl border border-foreground/15 rounded-3xl p-8 md:p-12 shadow-lg">
             <p className="text-muted-foreground leading-relaxed">{t('whoWeAreDesc1')}</p>
             <p className="text-muted-foreground leading-relaxed">{t('whoWeAreDesc2')}</p>
           </div>
@@ -128,7 +128,7 @@ export default async function HomePage({
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {/* Main featured card */}
-          <div className="bg-card border border-border/40 rounded-3xl p-8 hover:shadow-md transition-all duration-300 group flex flex-col justify-center">
+          <div className="bg-card/20 backdrop-blur-2xl border border-foreground/15 rounded-3xl p-8 hover:shadow-xl hover:border-foreground/25 transition-all duration-300 group flex flex-col justify-center shadow-lg">
             <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mb-8 group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
               <Globe className="h-8 w-8" />
             </div>
@@ -137,14 +137,14 @@ export default async function HomePage({
           </div>
           {/* Stacked right cards */}
           <div className="flex flex-col gap-8">
-            <div className="bg-card border border-border/40 rounded-3xl p-8 hover:shadow-md transition-all duration-300 group flex-1">
+            <div className="bg-card/20 backdrop-blur-2xl border border-foreground/15 rounded-3xl p-8 hover:shadow-xl hover:border-foreground/25 transition-all duration-300 group flex-1 shadow-lg">
               <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
                 <Award className="h-6 w-6" />
               </div>
               <h3 className="text-xl font-bold mb-3">{t('val2Title')}</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">{t('val2Desc')}</p>
             </div>
-            <div className="bg-card border border-border/40 rounded-3xl p-8 hover:shadow-md transition-all duration-300 group flex-1">
+            <div className="bg-card/20 backdrop-blur-2xl border border-foreground/15 rounded-3xl p-8 hover:shadow-xl hover:border-foreground/25 transition-all duration-300 group flex-1 shadow-lg">
               <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
                 <Users className="h-6 w-6" />
               </div>
@@ -171,7 +171,7 @@ export default async function HomePage({
           {certifications.map(cert => {
             const trans = cert.translations.find(tr => tr.locale === locale) || cert.translations.find(tr => tr.locale === 'en') || cert;
             return (
-              <div key={cert.id} className="bg-card border border-border/40 rounded-2xl p-6 shadow-sm flex flex-col justify-between hover:shadow-md transition-all">
+              <div key={cert.id} className="bg-card/20 backdrop-blur-2xl border border-foreground/15 rounded-2xl p-6 shadow-lg flex flex-col justify-between hover:shadow-xl hover:border-foreground/25 hover:-translate-y-1 transition-all">
                 <div>
                   <span className="text-[10px] uppercase font-bold tracking-wider text-primary bg-primary/10 px-2 py-0.5 rounded">
                     {cert.level}
@@ -242,7 +242,7 @@ export default async function HomePage({
             {blogPosts.map(post => {
               const trans = post.translations.find(tr => tr.locale === locale) || post.translations.find(tr => tr.locale === 'en') || post;
               return (
-                <div key={post.id} className="bg-card border border-border/40 rounded-2xl overflow-hidden shadow-sm flex flex-col justify-between hover:shadow-md transition-all group">
+                <div key={post.id} className="bg-card/20 backdrop-blur-2xl border border-foreground/15 rounded-2xl overflow-hidden shadow-lg flex flex-col justify-between hover:shadow-xl hover:border-foreground/25 hover:-translate-y-1 transition-all group">
                   <div className="p-6">
                     <span className="text-[10px] uppercase font-bold tracking-wider text-muted-foreground block mb-3">
                       {post.category}
