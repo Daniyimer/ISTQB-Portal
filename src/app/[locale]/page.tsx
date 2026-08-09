@@ -38,7 +38,7 @@ export default async function HomePage({
   });
 
   return (
-    <div className="flex flex-col flex-1 w-full bg-background relative">
+    <div className="flex flex-col flex-1 w-full bg-transparent relative">
       {/* 1. Hero Section */}
       <section className="relative z-10 container mx-auto px-4 sm:px-8 pt-20 pb-16 md:pt-32 md:pb-24 grid md:grid-cols-2 gap-12 items-center">
         <div className="flex flex-col items-start text-left">
