@@ -84,7 +84,7 @@ export default async function HomePage({
             <h2 className="text-3xl font-bold mb-4">{t('whoWeAreTitle')}</h2>
             <p className="text-xl font-medium text-foreground/80">{t('whoWeAreSub')}</p>
           </div>
-          <div className="grid md:grid-cols-2 gap-8 text-left bg-card/10 backdrop-blur-2xl border border-foreground/15 rounded-3xl p-8 md:p-12 shadow-lg">
+          <div className="grid md:grid-cols-2 gap-8 text-left rounded-3xl p-8 md:p-12">
             <p className="text-muted-foreground leading-relaxed">{t('whoWeAreDesc1')}</p>
             <p className="text-muted-foreground leading-relaxed">{t('whoWeAreDesc2')}</p>
           </div>
@@ -167,7 +167,7 @@ export default async function HomePage({
           {certifications.map(cert => {
             const trans = cert.translations.find(tr => tr.locale === locale) || cert.translations.find(tr => tr.locale === 'en') || cert;
             return (
-              <div key={cert.id} className="bg-card/10 backdrop-blur-2xl border border-foreground/15 rounded-2xl p-6 shadow-lg flex flex-col justify-between hover:shadow-xl hover:border-foreground/25 hover:-translate-y-1 transition-all">
+              <div key={cert.id} className="rounded-2xl p-6 flex flex-col justify-between hover:-translate-y-1 transition-all">
                 <div>
                   <span className="text-[10px] uppercase font-bold tracking-wider text-primary bg-primary/10 px-2 py-0.5 rounded">
                     {cert.level}
@@ -238,7 +238,7 @@ export default async function HomePage({
             {blogPosts.map(post => {
               const trans = post.translations.find(tr => tr.locale === locale) || post.translations.find(tr => tr.locale === 'en') || post;
               return (
-                <div key={post.id} className="bg-card/10 backdrop-blur-2xl border border-foreground/15 rounded-2xl overflow-hidden shadow-lg flex flex-col justify-between hover:shadow-xl hover:border-foreground/25 hover:-translate-y-1 transition-all group">
+                <div key={post.id} className="rounded-2xl overflow-hidden flex flex-col justify-between hover:-translate-y-1 transition-all group">
                   <div className="p-6">
                     <span className="text-[10px] uppercase font-bold tracking-wider text-muted-foreground block mb-3">
                       {post.category}
