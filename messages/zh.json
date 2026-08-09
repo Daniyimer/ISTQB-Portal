@@ -1,0 +1,30 @@
+{
+  "HomePage": {
+    "title": "ESTQB 埃塞俄比亚认证平台",
+    "description": "获取软件测试专业认证。",
+    "badge": "官方认证机构",
+    "explore": "浏览认证项目",
+    "learnAbout": "关于我们"
+  },
+  "Navigation": {
+    "certifications": "认证",
+    "blog": "博客",
+    "about": "关于我们",
+    "signIn": "登录",
+    "register": "注册"
+  },
+  "Footer": {
+    "description": "埃塞俄比亚官方软件测试认证机构。通过全球认可的认证提升QA标准。",
+    "certificationsTitle": "认证项目",
+    "foundation": "基础级 (CTFL)",
+    "agile": "敏捷测试员",
+    "advanced": "高级",
+    "resourcesTitle": "资源",
+    "news": "新闻与文章",
+    "verify": "验证证书",
+    "contact": "联系我们",
+    "rights": "ESTQB 埃塞俄比亚。保留所有权利。",
+    "privacy": "隐私政策",
+    "terms": "服务条款"
+  }
+}

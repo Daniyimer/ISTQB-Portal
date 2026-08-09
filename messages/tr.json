@@ -1,0 +1,30 @@
+{
+  "HomePage": {
+    "title": "ESTQB Etiyopya Sertifikasyon Platformu",
+    "description": "Yazılım testinde sertifika alın.",
+    "badge": "Resmi Sertifikasyon Kurumu",
+    "explore": "Sertifikaları Keşfedin",
+    "learnAbout": "Hakkımızda"
+  },
+  "Navigation": {
+    "certifications": "Sertifikalar",
+    "blog": "Blog",
+    "about": "Hakkımızda",
+    "signIn": "Giriş Yap",
+    "register": "Kayıt Ol"
+  },
+  "Footer": {
+    "description": "Etiyopya'daki resmi yazılım testi sertifikasyon kurumu. Küresel sertifikalarla QA standartlarını yükseltiyoruz.",
+    "certificationsTitle": "Sertifikalar",
+    "foundation": "Temel Seviye (CTFL)",
+    "agile": "Çevik Test Uzmanı",
+    "advanced": "İleri Seviye",
+    "resourcesTitle": "Kaynaklar",
+    "news": "Haberler & Makaleler",
+    "verify": "Sertifika Doğrula",
+    "contact": "İletişim",
+    "rights": "ESTQB Etiyopya. Tüm hakları saklıdır.",
+    "privacy": "Gizlilik Politikası",
+    "terms": "Hizmet Şartları"
+  }
+}

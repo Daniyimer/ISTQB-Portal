@@ -1,0 +1,25 @@
+{
+	auto_https off
+}
+
+:80 {
+	# MinIO Console API/UI
+	handle_path /minio-console* {
+		reverse_proxy minio:9001
+	}
+
+	# MinIO S3 API
+	handle_path /minio-api* {
+		reverse_proxy minio:9000
+	}
+
+	# Meilisearch
+	handle_path /meilisearch* {
+		reverse_proxy meilisearch:7700
+	}
+
+	# Next.js App
+	handle {
+		reverse_proxy nextjs:3000
+	}
+}

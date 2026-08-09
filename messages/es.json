@@ -1,0 +1,30 @@
+{
+  "HomePage": {
+    "title": "Plataforma de Certificación ESTQB Etiopía",
+    "description": "Obtén tu certificación en pruebas de software.",
+    "badge": "Cuerpo de Certificación Oficial",
+    "explore": "Explorar Certificaciones",
+    "learnAbout": "Sobre nosotros"
+  },
+  "Navigation": {
+    "certifications": "Certificaciones",
+    "blog": "Blog",
+    "about": "Sobre nosotros",
+    "signIn": "Iniciar sesión",
+    "register": "Registrarse"
+  },
+  "Footer": {
+    "description": "El organismo oficial de certificación de pruebas de software en Etiopía. Elevando los estándares de QA con certificaciones reconocidas mundialmente.",
+    "certificationsTitle": "Certificaciones",
+    "foundation": "Nivel Básico (CTFL)",
+    "agile": "Probador Ágil",
+    "advanced": "Nivel Avanzado",
+    "resourcesTitle": "Recursos",
+    "news": "Noticias y Artículos",
+    "verify": "Verificar Certificado",
+    "contact": "Contáctenos",
+    "rights": "ESTQB Etiopía. Todos los derechos reservados.",
+    "privacy": "Política de Privacidad",
+    "terms": "Términos de Servicio"
+  }
+}

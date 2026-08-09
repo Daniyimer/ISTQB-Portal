@@ -1,0 +1,30 @@
+{
+  "HomePage": {
+    "title": "ESTQB Äthiopien Zertifizierungsplattform",
+    "description": "Lassen Sie sich im Softwaretesten zertifizieren.",
+    "badge": "Offizielle Zertifizierungsstelle",
+    "explore": "Zertifizierungen entdecken",
+    "learnAbout": "Über uns"
+  },
+  "Navigation": {
+    "certifications": "Zertifizierungen",
+    "blog": "Blog",
+    "about": "Über uns",
+    "signIn": "Anmelden",
+    "register": "Registrieren"
+  },
+  "Footer": {
+    "description": "Die offizielle Zertifizierungsstelle für Softwaretests in Äthiopien. Steigerung der QA-Standards durch weltweit anerkannte Zertifizierungen.",
+    "certificationsTitle": "Zertifizierungen",
+    "foundation": "Foundation Level (CTFL)",
+    "agile": "Agile Tester",
+    "advanced": "Advanced Level",
+    "resourcesTitle": "Ressourcen",
+    "news": "News & Artikel",
+    "verify": "Zertifikat überprüfen",
+    "contact": "Kontakt",
+    "rights": "ESTQB Äthiopien. Alle Rechte vorbehalten.",
+    "privacy": "Datenschutz",
+    "terms": "Nutzungsbedingungen"
+  }
+}

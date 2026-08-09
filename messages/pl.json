@@ -1,0 +1,30 @@
+{
+  "HomePage": {
+    "title": "Platforma Certyfikacyjna ESTQB Etiopia",
+    "description": "Zdobądź certyfikat z testowania oprogramowania.",
+    "badge": "Oficjalna Jednostka Certyfikująca",
+    "explore": "Przeglądaj Certyfikaty",
+    "learnAbout": "O nas"
+  },
+  "Navigation": {
+    "certifications": "Certyfikaty",
+    "blog": "Blog",
+    "about": "O nas",
+    "signIn": "Zaloguj",
+    "register": "Zarejestruj się"
+  },
+  "Footer": {
+    "description": "Oficjalna jednostka certyfikująca testowanie oprogramowania w Etiopii. Podnoszenie standardów QA poprzez globalnie uznawane certyfikaty.",
+    "certificationsTitle": "Certyfikaty",
+    "foundation": "Poziom Podstawowy (CTFL)",
+    "agile": "Tester Zwinny",
+    "advanced": "Poziom Zaawansowany",
+    "resourcesTitle": "Zasoby",
+    "news": "Aktualności i Artykuły",
+    "verify": "Weryfikacja Certyfikatu",
+    "contact": "Kontakt",
+    "rights": "ESTQB Etiopia. Wszelkie prawa zastrzeżone.",
+    "privacy": "Polityka Prywatności",
+    "terms": "Regulamin"
+  }
+}

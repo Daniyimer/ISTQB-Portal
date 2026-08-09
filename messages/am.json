@@ -1,0 +1,30 @@
+{
+  "HomePage": {
+    "title": "የ ESTQB ኢትዮጵያ ማረጋገጫ መድረክ",
+    "description": "በሶፍትዌር ፍተሻ ውስጥ የምስክር ወረቀት ያግኙ።",
+    "badge": "ይፋዊ የማረጋገጫ አካል",
+    "explore": "ማረጋገጫዎችን ያስሱ",
+    "learnAbout": "ስለ እኛ ይወቁ"
+  },
+  "Navigation": {
+    "certifications": "ማረጋገጫዎች",
+    "blog": "ብሎግ",
+    "about": "ስለ እኛ",
+    "signIn": "ግባ",
+    "register": "ተመዝገብ"
+  },
+  "Footer": {
+    "description": "በኢትዮጵያ ውስጥ ይፋዊ የሶፍትዌር ሙከራ ማረጋገጫ አካል። በዓለም አቀፍ ደረጃ እውቅና ባላቸው የምስክር ወረቀቶች የጥራት ደረጃዎችን ከፍ ማድረግ።",
+    "certificationsTitle": "ማረጋገጫዎች",
+    "foundation": "የመሠረታዊ ደረጃ (CTFL)",
+    "agile": "አጃይል ፈታኝ (Agile Tester)",
+    "advanced": "የከፍተኛ ደረጃ (Advanced Level)",
+    "resourcesTitle": "መረጃዎች",
+    "news": "ዜናዎች እና መጣጥፎች",
+    "verify": "ማረጋገጫ ይፈትሹ",
+    "contact": "ያግኙን",
+    "rights": "ESTQB ኢትዮጵያ። መብቱ በህግ የተጠበቀ ነው።",
+    "privacy": "የግላዊነት መመሪያ",
+    "terms": "የአገልግሎት ውሎች"
+  }
+}

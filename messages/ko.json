@@ -1,0 +1,30 @@
+{
+  "HomePage": {
+    "title": "ESTQB 에티오피아 인증 플랫폼",
+    "description": "소프트웨어 테스팅 인증을 취득하세요.",
+    "badge": "공식 인증 기관",
+    "explore": "인증 과정 탐색",
+    "learnAbout": "회사 소개"
+  },
+  "Navigation": {
+    "certifications": "인증",
+    "blog": "블로그",
+    "about": "소개",
+    "signIn": "로그인",
+    "register": "회원가입"
+  },
+  "Footer": {
+    "description": "에티오피아 공식 소프트웨어 테스팅 인증 기관. 세계적으로 인정받는 인증을 통해 QA 표준을 높입니다.",
+    "certificationsTitle": "인증",
+    "foundation": "파운데이션 레벨 (CTFL)",
+    "agile": "애자일 테스터",
+    "advanced": "어드밴스드 레벨",
+    "resourcesTitle": "리소스",
+    "news": "뉴스 및 기사",
+    "verify": "인증서 확인",
+    "contact": "연락처",
+    "rights": "ESTQB 에티오피아. 모든 권리 보유.",
+    "privacy": "개인정보 처리방침",
+    "terms": "이용 약관"
+  }
+}

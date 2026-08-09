@@ -1,0 +1,30 @@
+{
+  "HomePage": {
+    "title": "ESTQB エチオピア認定プラットフォーム",
+    "description": "ソフトウェアテストの認定を取得しましょう。",
+    "badge": "公式認定機関",
+    "explore": "認定資格を探す",
+    "learnAbout": "私たちについて"
+  },
+  "Navigation": {
+    "certifications": "認定資格",
+    "blog": "ブログ",
+    "about": "私たちについて",
+    "signIn": "ログイン",
+    "register": "登録"
+  },
+  "Footer": {
+    "description": "エチオピアの公式ソフトウェアテスト認定機関。世界的に認められた認定を通じてQAの基準を向上させます。",
+    "certificationsTitle": "認定資格",
+    "foundation": "ファンデーションレベル (CTFL)",
+    "agile": "アジャイルテスター",
+    "advanced": "アドバンスドレベル",
+    "resourcesTitle": "リソース",
+    "news": "ニュースと記事",
+    "verify": "証明書の確認",
+    "contact": "お問い合わせ",
+    "rights": "ESTQB エチオピア. 無断転載を禁じます。",
+    "privacy": "プライバシーポリシー",
+    "terms": "利用規約"
+  }
+}

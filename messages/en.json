@@ -1,0 +1,30 @@
+{
+  "HomePage": {
+    "title": "ESTQB Ethiopia Certification Platform",
+    "description": "Get certified in software testing.",
+    "badge": "Official Certification Body",
+    "explore": "Explore Certifications",
+    "learnAbout": "Learn About Us"
+  },
+  "Navigation": {
+    "certifications": "Certifications",
+    "blog": "Blog",
+    "about": "About Us",
+    "signIn": "Sign In",
+    "register": "Register"
+  },
+  "Footer": {
+    "description": "The official software testing certification body in Ethiopia. Elevating QA standards through globally recognized certifications.",
+    "certificationsTitle": "Certifications",
+    "foundation": "Foundation Level (CTFL)",
+    "agile": "Agile Tester",
+    "advanced": "Advanced Level",
+    "resourcesTitle": "Resources",
+    "news": "News & Articles",
+    "verify": "Verify Certificate",
+    "contact": "Contact Us",
+    "rights": "ESTQB Ethiopia. All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
+  }
+}
