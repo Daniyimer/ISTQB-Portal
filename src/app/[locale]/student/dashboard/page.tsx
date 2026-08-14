@@ -116,14 +116,22 @@ export default async function StudentDashboardPage({
                       </div>
                     </div>
                   </div>
-                  <div className="text-right shrink-0">
-                    <p className="text-sm font-bold">{Math.round(enrollment.progressPercent)}%</p>
-                    <div className="w-24 h-1.5 bg-muted rounded-full mt-1">
-                      <div
-                        className="h-full bg-primary rounded-full transition-all"
-                        style={{ width: `${enrollment.progressPercent}%` }}
-                      />
+                  <div className="flex items-center gap-6 shrink-0">
+                    <div className="text-right">
+                      <p className="text-sm font-bold">{Math.round(enrollment.progressPercent)}%</p>
+                      <div className="w-24 h-1.5 bg-muted rounded-full mt-1">
+                        <div
+                          className="h-full bg-primary rounded-full transition-all"
+                          style={{ width: `${enrollment.progressPercent}%` }}
+                        />
+                      </div>
                     </div>
+                    <Link
+                      href={`/student/learn/${enrollment.id}`}
+                      className={buttonVariants({ variant: 'default', size: 'sm', className: 'gap-1 rounded-full' })}
+                    >
+                      {enrollment.progressPercent > 0 ? 'Resume' : 'Start Learning'} <ArrowRight className="h-3 w-3" />
+                    </Link>
                   </div>
                 </div>
               );
