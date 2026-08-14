@@ -1,7 +1,7 @@
 import { setRequestLocale } from 'next-intl/server';
 import { Link } from '@/i18n/routing';
 import { auth } from '@/auth';
-import { LayoutDashboard, Award, BookOpen, FileText, Shield, User } from 'lucide-react';
+import { LayoutDashboard, Award, BookOpen, FileText, Shield, User, Users, Inbox } from 'lucide-react';
 import { ThemeToggle } from '@/components/ThemeToggle';
 
 export default async function AdminLayout({
@@ -26,6 +26,8 @@ export default async function AdminLayout({
 
   const navItems = [
     { href: '/admin/dashboard', label: 'Dashboard', icon: LayoutDashboard, show: true },
+    { href: '/admin/students', label: 'Students', icon: Users, show: isInstructor },
+    { href: '/admin/messages', label: 'Inbox', icon: Inbox, show: isInstructor },
     { href: '/admin/certificates', label: 'Issue Certificates', icon: Award, show: isInstructor },
     { href: '/admin/syllabus', label: 'Manage Syllabus', icon: BookOpen, show: isInstructor },
     { href: '/admin/blog', label: 'Blog CMS', icon: FileText, show: isBlogManager },

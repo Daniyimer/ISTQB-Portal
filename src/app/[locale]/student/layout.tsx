@@ -1,7 +1,7 @@
 import { setRequestLocale } from 'next-intl/server';
 import { Link } from '@/i18n/routing';
 import { auth } from '@/auth';
-import { LayoutDashboard, Award, BookOpen, User } from 'lucide-react';
+import { LayoutDashboard, Award, BookOpen, User, MessageSquare } from 'lucide-react';
 import { ThemeToggle } from '@/components/ThemeToggle';
 
 export default async function StudentLayout({
@@ -19,6 +19,7 @@ export default async function StudentLayout({
   const navItems = [
     { href: '/student/dashboard', label: 'My Dashboard', icon: LayoutDashboard },
     { href: '/student/certificates', label: 'My Certificates', icon: Award },
+    { href: '/student/messages', label: 'Messages & Q&A', icon: MessageSquare },
   ];
 
   return (

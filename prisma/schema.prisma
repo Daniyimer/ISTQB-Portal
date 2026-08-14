@@ -39,6 +39,8 @@ model User {
   enrollments  Enrollment[]
   certificates Certificate[]
   blogPosts    BlogPost[]
+  sentMessages     Message[] @relation("SentMessages")
+  receivedMessages Message[] @relation("ReceivedMessages")
 }
 
 model Certification {
@@ -58,6 +60,7 @@ model Certification {
   certificates  Certificate[]
   syllabusFiles SyllabusFile[]
   translations  CertificationTranslation[]
+  messages      Message[]
 }
 
 model CertificationTranslation {
@@ -101,6 +104,23 @@ model Certificate {
   certification Certification @relation(fields: [certificationId], references: [id], onDelete: Cascade)
 }
 
+model Message {
+  id              String   @id @default(cuid())
+  senderId        String
+  recipientId     String?
+  certificationId String?
+  subject         String
+  body            String
+  isRead          Boolean  @default(false)
+  parentId        String?
+  createdAt       DateTime @default(now())
+
+  sender        User           @relation("SentMessages", fields: [senderId], references: [id], onDelete: Cascade)
+  recipient     User?          @relation("ReceivedMessages", fields: [recipientId], references: [id], onDelete: SetNull)
+  certification Certification? @relation(fields: [certificationId], references: [id], onDelete: SetNull)
+  parent        Message?       @relation("Replies", fields: [parentId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  replies       Message[]      @relation("Replies")
+}
 model BlogPost {
   id              String    @id @default(cuid())
   title           String
