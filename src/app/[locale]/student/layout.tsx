@@ -2,6 +2,7 @@ import { setRequestLocale } from 'next-intl/server';
 import { Link } from '@/i18n/routing';
 import { auth } from '@/auth';
 import { LayoutDashboard, Award, BookOpen, User } from 'lucide-react';
+import { ThemeToggle } from '@/components/ThemeToggle';
 
 export default async function StudentLayout({
   children,
@@ -33,14 +34,17 @@ export default async function StudentLayout({
       <aside className="relative z-10 w-64 hidden md:flex flex-col bg-card/80 backdrop-blur-2xl border-r border-foreground/10 shadow-sm">
         {/* Portal Header */}
         <div className="p-6 border-b border-foreground/10">
-          <div className="flex items-center gap-3 mb-3">
-            <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
-              <BookOpen className="h-5 w-5" />
+          <div className="flex items-center justify-between mb-3">
+            <div className="flex items-center gap-3">
+              <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+                <BookOpen className="h-5 w-5" />
+              </div>
+              <div>
+                <p className="font-bold text-sm text-primary">Student Portal</p>
+                <p className="text-[10px] text-muted-foreground uppercase tracking-wider">Candidate</p>
+              </div>
             </div>
-            <div>
-              <p className="font-bold text-sm text-primary">Student Portal</p>
-              <p className="text-[10px] text-muted-foreground uppercase tracking-wider">Candidate</p>
-            </div>
+            <ThemeToggle />
           </div>
           <div className="flex items-center gap-2 mt-2 bg-primary/5 border border-primary/10 rounded-lg px-3 py-2">
             <div className="w-7 h-7 rounded-full bg-primary/20 flex items-center justify-center text-primary text-xs font-bold">
