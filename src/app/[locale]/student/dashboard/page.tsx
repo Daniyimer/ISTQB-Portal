@@ -38,7 +38,7 @@ export default async function StudentDashboardPage({
     }),
   ]);
 
-  const activeEnrollments = enrollments.filter(e => e.status === 'ACTIVE' || e.status === 'IN_PROGRESS');
+  const activeEnrollments = enrollments.filter(e => e.status === 'ACTIVE' || e.status === 'IN_PROGRESS' || e.status === 'PENDING');
   const completedEnrollments = enrollments.filter(e => e.status === 'COMPLETED');
 
   const stats = [
@@ -105,6 +105,8 @@ export default async function StudentDashboardPage({
                         <span className={`text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full ${
                           enrollment.status === 'COMPLETED'
                             ? 'bg-green-500/10 text-green-600'
+                            : enrollment.status === 'PENDING'
+                            ? 'bg-yellow-500/10 text-yellow-600'
                             : 'bg-primary/10 text-primary'
                         }`}>
                           {enrollment.status.replace('_', ' ')}
@@ -117,21 +119,30 @@ export default async function StudentDashboardPage({
                     </div>
                   </div>
                   <div className="flex items-center gap-6 shrink-0">
-                    <div className="text-right">
-                      <p className="text-sm font-bold">{Math.round(enrollment.progressPercent)}%</p>
-                      <div className="w-24 h-1.5 bg-muted rounded-full mt-1">
-                        <div
-                          className="h-full bg-primary rounded-full transition-all"
-                          style={{ width: `${enrollment.progressPercent}%` }}
-                        />
+                    {enrollment.status === 'PENDING' ? (
+                      <div className="text-right">
+                        <p className="text-sm font-bold text-yellow-600">Pending Verification</p>
+                        <p className="text-xs text-muted-foreground mt-1">Admin will approve soon</p>
                       </div>
-                    </div>
-                    <Link
-                      href={`/student/learn/${enrollment.id}`}
-                      className={buttonVariants({ variant: 'default', size: 'sm', className: 'gap-1 rounded-full' })}
-                    >
-                      {enrollment.progressPercent > 0 ? 'Resume' : 'Start Learning'} <ArrowRight className="h-3 w-3" />
-                    </Link>
+                    ) : (
+                      <>
+                        <div className="text-right">
+                          <p className="text-sm font-bold">{Math.round(enrollment.progressPercent)}%</p>
+                          <div className="w-24 h-1.5 bg-muted rounded-full mt-1">
+                            <div
+                              className="h-full bg-primary rounded-full transition-all"
+                              style={{ width: `${enrollment.progressPercent}%` }}
+                            />
+                          </div>
+                        </div>
+                        <Link
+                          href={`/student/learn/${enrollment.id}`}
+                          className={buttonVariants({ variant: 'default', size: 'sm', className: 'gap-1 rounded-full' })}
+                        >
+                          {enrollment.progressPercent > 0 ? 'Resume' : 'Start Learning'} <ArrowRight className="h-3 w-3" />
+                        </Link>
+                      </>
+                    )}
                   </div>
                 </div>
               );
@@ -227,14 +238,11 @@ export default async function StudentDashboardPage({
 // Client component for enrollment button
 function EnrollButton({ certificationId }: { certificationId: string }) {
   return (
-    <form action={`/api/enrollments`} method="POST">
-      <input type="hidden" name="certificationId" value={certificationId} />
-      <button
-        type="submit"
-        className="text-xs font-semibold text-primary hover:underline flex items-center gap-1"
-      >
-        Enroll <ArrowRight className="h-3 w-3" />
-      </button>
-    </form>
+    <Link
+      href={`/student/checkout/${certificationId}`}
+      className="text-xs font-semibold text-primary hover:underline flex items-center gap-1"
+    >
+      Enroll <ArrowRight className="h-3 w-3" />
+    </Link>
   );
 }

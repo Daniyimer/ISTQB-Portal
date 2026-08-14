@@ -3,8 +3,9 @@ import { auth } from '@/auth';
 import { prisma } from '@/lib/prisma';
 import { Link } from '@/i18n/routing';
 import { notFound } from 'next/navigation';
-import { ArrowLeft, BookOpen, Award, Mail, Clock, CheckCircle2, MessageSquare } from 'lucide-react';
+import { ArrowLeft, BookOpen, Award, Mail, Clock, CheckCircle2, MessageSquare, Image as ImageIcon } from 'lucide-react';
 import { StaffReplyForm } from '@/components/StaffReplyForm';
+import { ApproveEnrollmentButton } from '@/components/ApproveEnrollmentButton';
 
 export default async function StudentDetailPage({
   params
@@ -125,6 +126,7 @@ export default async function StudentDetailPage({
                       <span className={`text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full ${
                         enrollment.status === 'COMPLETED' ? 'bg-green-500/10 text-green-600'
                         : enrollment.status === 'IN_PROGRESS' ? 'bg-blue-500/10 text-blue-600'
+                        : enrollment.status === 'PENDING' ? 'bg-yellow-500/10 text-yellow-600'
                         : 'bg-primary/10 text-primary'
                       }`}>
                         {enrollment.status.replace('_', ' ')}
@@ -134,15 +136,26 @@ export default async function StudentDetailPage({
                         Enrolled {new Date(enrollment.enrolledAt).toLocaleDateString()}
                       </span>
                     </div>
+                    {enrollment.status === 'PENDING' && enrollment.paymentScreenshot && (
+                      <a href={enrollment.paymentScreenshot} target="_blank" rel="noreferrer" className="flex items-center gap-1 mt-2 text-xs font-semibold text-blue-600 hover:underline">
+                        <ImageIcon className="h-3.5 w-3.5" /> View Payment Screenshot
+                      </a>
+                    )}
                   </div>
                   <div className="text-right shrink-0">
-                    <p className="text-sm font-bold">{Math.round(enrollment.progressPercent)}%</p>
-                    <div className="w-32 h-1.5 bg-muted rounded-full mt-1">
-                      <div
-                        className="h-full bg-primary rounded-full transition-all"
-                        style={{ width: `${enrollment.progressPercent}%` }}
-                      />
-                    </div>
+                    {enrollment.status === 'PENDING' ? (
+                      <ApproveEnrollmentButton enrollmentId={enrollment.id} />
+                    ) : (
+                      <>
+                        <p className="text-sm font-bold">{Math.round(enrollment.progressPercent)}%</p>
+                        <div className="w-32 h-1.5 bg-muted rounded-full mt-1">
+                          <div
+                            className="h-full bg-primary rounded-full transition-all"
+                            style={{ width: `${enrollment.progressPercent}%` }}
+                          />
+                        </div>
+                      </>
+                    )}
                   </div>
                 </div>
               );

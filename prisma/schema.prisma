@@ -18,6 +18,7 @@ enum Role {
 }
 
 enum EnrollmentStatus {
+  PENDING
   ACTIVE
   IN_PROGRESS
   COMPLETED
@@ -79,8 +80,9 @@ model Enrollment {
   id              String           @id @default(cuid())
   userId          String
   certificationId String
-  status          EnrollmentStatus @default(ACTIVE)
+  status          EnrollmentStatus @default(PENDING)
   progressPercent Float            @default(0.0)
+  paymentScreenshot String?
   enrolledAt      DateTime         @default(now())
   completedAt     DateTime?
 
