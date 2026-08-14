@@ -2,7 +2,9 @@ import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { buttonVariants } from '@/components/ui/button';
 import { Link } from '@/i18n/routing';
 import { prisma } from '@/lib/prisma';
-import { Award, BookOpen, Clock, Tag, Percent } from 'lucide-react';
+import { auth } from '@/auth';
+import { Clock, Tag, Percent, CheckCircle2 } from 'lucide-react';
+import { EnrollButton } from '@/components/EnrollButton';
 
 export default async function CertificationsPage({
   params
@@ -11,10 +13,19 @@ export default async function CertificationsPage({
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
+  const session = await auth();
   
-  const certifications = await prisma.certification.findMany({
-    include: { translations: true }
-  });
+  const [certifications, userEnrollments] = await Promise.all([
+    prisma.certification.findMany({
+      include: { translations: true }
+    }),
+    session?.user?.id ? prisma.enrollment.findMany({
+      where: { userId: session.user.id },
+      select: { certificationId: true }
+    }) : []
+  ]);
+
+  const enrolledIds = new Set(userEnrollments.map(e => e.certificationId));
 
   return (
     <div className="flex flex-col flex-1 w-full bg-transparent relative">
@@ -27,6 +38,11 @@ export default async function CertificationsPage({
           <p className="text-muted-foreground text-lg leading-relaxed">
             Unlock new career milestones with our globally recognized testing syllabi. Access materials and register for examinations in Ethiopia.
           </p>
+          {!session && (
+            <p className="text-sm text-muted-foreground">
+              <Link href="/auth/signin" className="text-primary font-semibold hover:underline">Sign in</Link> to enroll in a certification.
+            </p>
+          )}
         </div>
       </section>
 
@@ -35,6 +51,7 @@ export default async function CertificationsPage({
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {certifications.map((cert) => {
             const trans = cert.translations.find(tr => tr.locale === locale) || cert.translations.find(tr => tr.locale === 'en') || cert;
+            const isEnrolled = enrolledIds.has(cert.id);
             return (
               <div key={cert.id} className="bg-primary/10 border border-primary/20 rounded-2xl p-8 shadow-sm flex flex-col justify-between hover:shadow-md hover:border-primary/30 hover:-translate-y-1 transition-all duration-300 group">
                 <div>
@@ -67,12 +84,13 @@ export default async function CertificationsPage({
                     <Tag className="h-4 w-4 text-primary/60" />
                     <span>${cert.price.toFixed(2)}</span>
                   </div>
-                  <Link 
-                    href={`/certifications`} 
-                    className={buttonVariants({ variant: 'outline', className: 'hover:bg-primary hover:text-primary-foreground transition-all duration-300 font-semibold' })}
-                  >
-                    View Syllabus
-                  </Link>
+                  {isEnrolled ? (
+                    <span className="flex items-center gap-1.5 text-sm font-semibold text-green-600">
+                      <CheckCircle2 className="h-4 w-4" /> Enrolled
+                    </span>
+                  ) : (
+                    <EnrollButton certificationId={cert.id} locale={locale} />
+                  )}
                 </div>
               </div>
             );
