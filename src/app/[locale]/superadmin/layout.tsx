@@ -3,6 +3,7 @@ import { Link } from '@/i18n/routing';
 import { auth } from '@/auth';
 import { LayoutDashboard, Users, Shield, ArrowLeft } from 'lucide-react';
 import { ThemeToggle } from '@/components/ThemeToggle';
+import { LogoutButton } from '@/components/LogoutButton';
 
 export default async function SuperAdminLayout({
   children,
@@ -82,6 +83,10 @@ export default async function SuperAdminLayout({
             </Link>
           </div>
         </nav>
+        
+        <div className="p-4 mt-auto border-t border-destructive/10">
+          <LogoutButton />
+        </div>
       </aside>
       
       {/* Main Content */}

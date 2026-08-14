@@ -3,6 +3,7 @@ import { Link } from '@/i18n/routing';
 import { auth } from '@/auth';
 import { LayoutDashboard, Award, BookOpen, FileText, Shield, User, Users, Inbox } from 'lucide-react';
 import { ThemeToggle } from '@/components/ThemeToggle';
+import { LogoutButton } from '@/components/LogoutButton';
 
 export default async function AdminLayout({
   children,
@@ -91,7 +92,12 @@ export default async function AdminLayout({
             </div>
           )}
         </nav>
+        
+        <div className="p-4 mt-auto border-t border-foreground/10">
+          <LogoutButton />
+        </div>
       </aside>
+
       
       {/* Main Content */}
       <main className="relative z-10 flex-1 p-6 md:p-10">
