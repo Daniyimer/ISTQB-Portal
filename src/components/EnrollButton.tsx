@@ -1,15 +1,14 @@
 'use client';
 
 import { buttonVariants } from '@/components/ui/button';
-import { Link } from '@/i18n/routing';
 
-export function EnrollButton({ certificationId }: { certificationId: string }) {
+export function EnrollButton({ certificationId, locale }: { certificationId: string; locale: string }) {
   return (
-    <Link
-      href={`/student/checkout/${certificationId}`}
+    <a
+      href={`/${locale}/student/checkout/${certificationId}`}
       className={buttonVariants({ className: 'gap-2 font-semibold' })}
     >
       Enroll Now
-    </Link>
+    </a>
   );
 }

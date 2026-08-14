@@ -218,7 +218,7 @@ export default async function StudentDashboardPage({
                       <CheckCircle2 className="h-3.5 w-3.5" /> Enrolled
                     </span>
                   ) : (
-                    <EnrollButton certificationId={cert.id} />
+                    <EnrollButton certificationId={cert.id} locale={locale} />
                   )}
                 </div>
               </div>
@@ -236,13 +236,13 @@ export default async function StudentDashboardPage({
 }
 
 // Client component for enrollment button
-function EnrollButton({ certificationId }: { certificationId: string }) {
+function EnrollButton({ certificationId, locale }: { certificationId: string; locale: string }) {
   return (
-    <Link
-      href={`/student/checkout/${certificationId}`}
+    <a
+      href={`/${locale}/student/checkout/${certificationId}`}
       className="text-xs font-semibold text-primary hover:underline flex items-center gap-1"
     >
       Enroll <ArrowRight className="h-3 w-3" />
-    </Link>
+    </a>
   );
 }

@@ -34,8 +34,7 @@ export function CheckoutClient({ certificationId, price }: CheckoutClientProps) 
       if (res.ok) {
         setState('done');
         setTimeout(() => {
-          router.push('/en/student/dashboard');
-          router.refresh();
+          window.location.href = '/en/student/dashboard';
         }, 2000);
       } else {
         setState('error');
