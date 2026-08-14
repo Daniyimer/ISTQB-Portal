@@ -89,7 +89,7 @@ export default async function CertificationsPage({
                       <CheckCircle2 className="h-4 w-4" /> Enrolled
                     </span>
                   ) : (
-                    <EnrollButton certificationId={cert.id} locale={locale} />
+                    <EnrollButton certificationId={cert.id} />
                   )}
                 </div>
               </div>

@@ -1,22 +1,15 @@
 'use client';
 
 import { buttonVariants } from '@/components/ui/button';
-import { useRouter } from 'next/navigation';
+import { Link } from '@/i18n/routing';
 
-export function EnrollButton({ certificationId, locale }: { certificationId: string; locale: string }) {
-  const router = useRouter();
-
-  function handleEnroll() {
-    router.push(`/${locale}/student/checkout/${certificationId}`);
-  }
-
+export function EnrollButton({ certificationId }: { certificationId: string }) {
   return (
-    <button
-      type="button"
-      onClick={handleEnroll}
+    <Link
+      href={`/student/checkout/${certificationId}`}
       className={buttonVariants({ className: 'gap-2 font-semibold' })}
     >
       Enroll Now
-    </button>
+    </Link>
   );
 }
