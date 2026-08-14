@@ -61,17 +61,36 @@ export default async function HomePage({
         <div className="relative hidden md:block">
           {/* Floating Certificate Graphic (Glassmorphism) */}
           <div className="relative w-full max-w-md mx-auto aspect-[4/3] bg-card/30 backdrop-blur-2xl border border-foreground/15 rounded-2xl p-6 shadow-2xl rotate-3 hover:rotate-0 transition-transform duration-500">
-             <div className="flex justify-between items-start mb-8">
-               <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary"><Award className="h-6 w-6" /></div>
-               <div className="w-24 h-6 rounded bg-muted/50"></div>
+             {/* Certificate Header */}
+             <div className="flex justify-between items-start mb-4">
+               <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary">
+                 <Award className="h-5 w-5" />
+               </div>
+               <div className="text-right">
+                 <p className="text-[8px] uppercase tracking-widest text-muted-foreground font-bold">Certificate No.</p>
+                 <p className="text-[10px] font-mono text-primary font-semibold">ESTQB-ET-2025-001</p>
+               </div>
              </div>
-             <div className="space-y-4 mb-8">
-               <div className="w-3/4 h-4 rounded bg-muted/50"></div>
-               <div className="w-1/2 h-4 rounded bg-muted/50"></div>
+             {/* Certificate Body */}
+             <div className="text-center space-y-2 mb-4">
+               <p className="text-[8px] uppercase tracking-[0.2em] text-muted-foreground">Ethiopian Software Testing Qualifications Board</p>
+               <p className="text-[10px] text-muted-foreground/80">hereby certifies that</p>
+               <p className="text-sm font-bold text-foreground border-b border-primary/30 pb-1 mx-4">Abebe Kebede</p>
+               <p className="text-[10px] text-muted-foreground/80">has successfully completed</p>
+               <p className="text-xs font-bold text-primary">ISTQB® Certified Tester — Foundation Level</p>
              </div>
-             <div className="pt-6 border-t border-border/40 flex justify-between">
-               <div className="w-16 h-16 rounded-full border-4 border-primary/20 flex items-center justify-center opacity-50"><CheckCircle2 className="h-8 w-8 text-primary" /></div>
-               <div className="w-32 h-12 rounded bg-muted/30"></div>
+             {/* Certificate Footer */}
+             <div className="pt-3 border-t border-border/40 flex justify-between items-end">
+               <div className="space-y-1">
+                 <div className="flex items-center gap-1 text-[9px] text-muted-foreground">
+                   <Calendar className="h-3 w-3" />
+                   <span>August 14, 2025</span>
+                 </div>
+                 <p className="text-[8px] text-muted-foreground/60">Addis Ababa, Ethiopia</p>
+               </div>
+               <div className="w-12 h-12 rounded-full border-2 border-primary/30 flex items-center justify-center">
+                 <CheckCircle2 className="h-6 w-6 text-primary/60" />
+               </div>
              </div>
           </div>
         </div>
