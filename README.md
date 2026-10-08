@@ -1,36 +1,45 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Learning & Certification Portal 🎓
 
-## Getting Started
+Welcome to the Learning & Certification Portal! This is a modern, full-stack web application designed to help students track their course progress, view syllabus materials, and earn certificates, while giving administrators the tools they need to manage it all.
 
-First, run the development server:
+## ✨ Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **🎓 Student Dashboard**: A clean, distraction-free interface where students can track their enrollments, view course progress, and access study materials.
+- **🛠️ Admin/Staff Portal**: Dedicated staff tools to upload syllabus PDFs, manage student enrollments, and track course completion.
+- **📄 Interactive Learning**: Students can view and check off individual syllabus materials right inside the browser.
+- **🌍 Multi-language Support**: Built-in support for different languages (English, Arabic, etc.) using `next-intl`.
+- **🌙 Modern UI**: Fully responsive, featuring a sleek dark mode, glassmorphism aesthetics, and smooth animations.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Tech Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Framework**: [Next.js 16 (App Router)](https://nextjs.org/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/) & [Shadcn UI](https://ui.shadcn.com/)
+- **Database**: [PostgreSQL](https://www.postgresql.org/) managed via [Prisma ORM](https://www.prisma.io/)
+- **Authentication**: NextAuth.js
+- **Containerization**: Docker & Docker Compose (for local DB/Redis/Minio services)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 💻 Getting Started
 
-## Learn More
+To run this project locally on your machine:
 
-To learn more about Next.js, take a look at the following resources:
+1. **Start the database services** (PostgreSQL, Redis, Minio):
+   ```bash
+   docker-compose up -d postgres redis minio meilisearch
+   ```
+2. **Install dependencies**:
+   ```bash
+   npm install
+   ```
+3. **Run database migrations**:
+   ```bash
+   npx prisma db push
+   ```
+4. **Start the development server**:
+   ```bash
+   npm run dev
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Open [http://localhost:3000](http://localhost:3000) in your browser to see the app in action!
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+*Built with ❤️ for a better learning experience.*
