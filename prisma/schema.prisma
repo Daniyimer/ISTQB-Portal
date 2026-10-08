@@ -2,7 +2,7 @@
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
 generator client {
-  provider = "prisma-client-js"
+  provider        = "prisma-client-js"
   previewFeatures = ["driverAdapters"]
 }
 
@@ -37,11 +37,11 @@ model User {
   createdAt       DateTime @default(now())
   updatedAt       DateTime @updatedAt
 
-  enrollments  Enrollment[]
-  certificates Certificate[]
-  blogPosts    BlogPost[]
-  sentMessages     Message[] @relation("SentMessages")
-  receivedMessages Message[] @relation("ReceivedMessages")
+  enrollments      Enrollment[]
+  certificates     Certificate[]
+  blogPosts        BlogPost[]
+  sentMessages     Message[]     @relation("SentMessages")
+  receivedMessages Message[]     @relation("ReceivedMessages")
 }
 
 model Certification {
@@ -77,14 +77,15 @@ model CertificationTranslation {
 }
 
 model Enrollment {
-  id              String           @id @default(cuid())
-  userId          String
-  certificationId String
-  status          EnrollmentStatus @default(PENDING)
-  progressPercent Float            @default(0.0)
-  paymentScreenshot String?
-  enrolledAt      DateTime         @default(now())
-  completedAt     DateTime?
+  id                   String           @id @default(cuid())
+  userId               String
+  certificationId      String
+  status               EnrollmentStatus @default(PENDING)
+  progressPercent      Float            @default(0.0)
+  paymentScreenshot    String?
+  enrolledAt           DateTime         @default(now())
+  completedAt          DateTime?
+  completedSyllabusIds String[]         @default([])
 
   user          User          @relation(fields: [userId], references: [id], onDelete: Cascade)
   certification Certification @relation(fields: [certificationId], references: [id], onDelete: Cascade)
@@ -123,6 +124,7 @@ model Message {
   parent        Message?       @relation("Replies", fields: [parentId], references: [id], onDelete: NoAction, onUpdate: NoAction)
   replies       Message[]      @relation("Replies")
 }
+
 model BlogPost {
   id              String    @id @default(cuid())
   title           String

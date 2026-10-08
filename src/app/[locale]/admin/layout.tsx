@@ -69,6 +69,10 @@ export default async function AdminLayout({
 
         {/* Nav */}
         <nav className="flex-1 p-4 space-y-1">
+          <div className="mb-4 pb-4 border-b border-foreground/10">
+            <LogoutButton />
+          </div>
+          
           {navItems.map(({ href, label, icon: Icon }) => (
             <Link
               key={href}
@@ -92,10 +96,6 @@ export default async function AdminLayout({
             </div>
           )}
         </nav>
-        
-        <div className="p-4 mt-auto border-t border-foreground/10">
-          <LogoutButton />
-        </div>
       </aside>
 
       

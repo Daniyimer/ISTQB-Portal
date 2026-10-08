@@ -4,6 +4,7 @@ import { prisma } from '@/lib/prisma';
 import { notFound, redirect } from 'next/navigation';
 import { Link } from '@/i18n/routing';
 import { ArrowLeft, BookOpen, Download } from 'lucide-react';
+import { SyllabusFileItem } from '@/components/SyllabusFileItem';
 import { LearningHubClient } from '@/components/LearningHubClient';
 
 export default async function StudentLearnPage({
@@ -80,27 +81,17 @@ export default async function StudentLearnPage({
           </div>
         ) : (
           <div className="divide-y divide-border">
-            {cert.syllabusFiles.map(file => (
-              <div key={file.id} className="p-6 flex items-center justify-between hover:bg-muted/10 transition-colors">
-                <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 rounded-lg bg-blue-500/10 text-blue-600 flex items-center justify-center">
-                    <BookOpen className="h-5 w-5" />
-                  </div>
-                  <div>
-                    <p className="font-semibold text-sm">{file.fileName}</p>
-                    <p className="text-xs text-muted-foreground">{(file.fileSizeKb / 1024).toFixed(1)} MB · PDF</p>
-                  </div>
-                </div>
-                <a 
-                  href={file.fileUrl} 
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-sm font-semibold text-primary hover:underline"
-                >
-                  Download <Download className="h-4 w-4" />
-                </a>
-              </div>
-            ))}
+            {cert.syllabusFiles.map(file => {
+              const isCompleted = enrollment.completedSyllabusIds?.includes(file.id) || false;
+              return (
+                <SyllabusFileItem 
+                  key={file.id} 
+                  file={file} 
+                  enrollmentId={enrollment.id}
+                  isCompleted={isCompleted}
+                />
+              );
+            })}
           </div>
         )}
       </div>

@@ -14,8 +14,11 @@ export default async function StudentCheckoutPage({
   const { locale, id: certificationId } = await params;
   setRequestLocale(locale);
   const session = await auth();
+  
+  console.log('Checkout page session:', session);
 
   if (!session?.user?.id) {
+    console.log('Redirecting to signin because no session user id');
     redirect('/auth/signin');
   }
 
@@ -41,6 +44,8 @@ export default async function StudentCheckoutPage({
       }
     }
   });
+
+  console.log('existingEnrollment:', existingEnrollment);
 
   if (existingEnrollment) {
     redirect('/student/dashboard'); // already enrolled or pending, go to dashboard

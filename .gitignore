@@ -43,3 +43,16 @@ next-env.d.ts
 /src/generated/prisma
 old-readme.md
 AGENTS.md
+
+# User Uploads
+public/uploads/
+
+# Scratch/Test Files
+test-enrollment.ts
+public/demo-syllabus.pdf
+
+# AI/Agent Markdown Notes
+implementation.md
+estqb-ethiopia-dev-prompt (1).md
+docker-postgres-guide.md
+CLAUDE.md

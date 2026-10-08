@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { auth } from '@/auth';
 import { prisma } from '@/lib/prisma';
 
-export async function PATCH(
+export async function POST(
   request: NextRequest,
   { params }: { params: Promise<{ id: string }> }
 ) {
@@ -14,41 +14,63 @@ export async function PATCH(
 
     const { id: enrollmentId } = await params;
     const body = await request.json();
-    const { progressPercent } = body;
+    const { syllabusFileId, completed } = body;
 
-    if (typeof progressPercent !== 'number' || progressPercent < 0 || progressPercent > 100) {
-      return NextResponse.json({ error: 'Invalid progress percentage' }, { status: 400 });
+    if (!syllabusFileId || typeof completed !== 'boolean') {
+      return NextResponse.json({ error: 'Invalid request body' }, { status: 400 });
     }
 
-    // Ensure the enrollment belongs to the user
-    const existingEnrollment = await prisma.enrollment.findUnique({
-      where: { id: enrollmentId }
+    // Verify enrollment belongs to user
+    const enrollment = await prisma.enrollment.findUnique({
+      where: { id: enrollmentId, userId: session.user.id },
+      include: {
+        certification: {
+          include: {
+            syllabusFiles: true
+          }
+        }
+      }
     });
 
-    if (!existingEnrollment || existingEnrollment.userId !== session.user.id) {
-      return NextResponse.json({ error: 'Enrollment not found or unauthorized' }, { status: 404 });
+    if (!enrollment) {
+      return NextResponse.json({ error: 'Enrollment not found' }, { status: 404 });
     }
 
-    // Determine status based on progress
-    let status = existingEnrollment.status;
-    if (progressPercent === 100) {
-      status = 'COMPLETED';
-    } else if (progressPercent > 0 && status === 'ACTIVE') {
-      status = 'IN_PROGRESS';
+    // Verify syllabus file exists in this certification
+    const totalFiles = enrollment.certification.syllabusFiles.length;
+    const fileExists = enrollment.certification.syllabusFiles.some(f => f.id === syllabusFileId);
+    if (!fileExists) {
+      return NextResponse.json({ error: 'Syllabus file not part of this course' }, { status: 400 });
     }
+
+    // Update completed array
+    let updatedCompletedIds = [...enrollment.completedSyllabusIds];
+    if (completed && !updatedCompletedIds.includes(syllabusFileId)) {
+      updatedCompletedIds.push(syllabusFileId);
+    } else if (!completed && updatedCompletedIds.includes(syllabusFileId)) {
+      updatedCompletedIds = updatedCompletedIds.filter(id => id !== syllabusFileId);
+    }
+
+    // Recalculate progress (ensure it doesn't exceed 100 or drop below 0)
+    let newProgress = 0;
+    if (totalFiles > 0) {
+      newProgress = (updatedCompletedIds.length / totalFiles) * 100;
+    }
+    
+    // If progress reaches 100% and it was IN_PROGRESS, maybe mark as completed? Or just let the exam do it.
+    // Let's just update the progress percent.
 
     const updatedEnrollment = await prisma.enrollment.update({
       where: { id: enrollmentId },
       data: {
-        progressPercent,
-        status,
-        ...(progressPercent === 100 && !existingEnrollment.completedAt ? { completedAt: new Date() } : {})
+        completedSyllabusIds: updatedCompletedIds,
+        progressPercent: newProgress,
       }
     });
 
-    return NextResponse.json({ success: true, enrollment: updatedEnrollment });
-  } catch (error) {
-    console.error('Error updating progress:', error);
-    return NextResponse.json({ error: 'Failed to update progress' }, { status: 500 });
+    return NextResponse.json({ success: true, progressPercent: newProgress, completedSyllabusIds: updatedCompletedIds });
+  } catch (error: any) {
+    console.error('Failed to update progress:', error);
+    return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
 }
